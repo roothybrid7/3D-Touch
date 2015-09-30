@@ -217,7 +217,7 @@
 				TargetAttributes = {
 					D20FACAD1BB039DE00662806 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = F34HMY85N9;
+						DevelopmentTeam = CRP7G7R842;
 					};
 					D20FACC61BB039DF00662806 = {
 						CreatedOnToolsVersion = 7.0;

@@ -10,4 +10,6 @@
 
 @interface PreviewViewController : UIViewController
 
+- (void)changeBGColor;
+
 @end

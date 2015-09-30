@@ -25,6 +25,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    button.frame = CGRectMake(0, 0, self.view.bounds.size.width, 44);
+    [self.view addSubview:button];
+    NSLog(@"========= viewWillAppear %s ", __PRETTY_FUNCTION__);
+}
+
 - (void)dismissMe{
     
     // dismiss this view controller
@@ -41,9 +49,30 @@
     }
 }
 
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    if (parent) {
+        NSLog(@"========= addChildViewContrller %s ", __PRETTY_FUNCTION__);
+    } else {
+        NSLog(@"========= removeChildViewController %s ", __PRETTY_FUNCTION__);
+    }
+}
+
+- (void)changeBGColor {
+    self.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255. green:arc4random_uniform(255)/255. blue:arc4random_uniform(255)/255. alpha:1];
+}
+
+- (void)hoge:(UIGestureRecognizer *)recognizer {
+    NSLog(@"%s #####", __PRETTY_FUNCTION__);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
 
 #pragma mark - Preview Actions
 
+/*
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
         
     // setup a list of preview actions
@@ -69,7 +98,7 @@
     // and return them (return the array of actions instead to see all items ungrouped)
     return group;
 }
-
+*/
 
 
 @end
